@@ -1,74 +1,78 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    list-style: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
 }
 header {
-    width: 100%;
-    height: 10vh;
-    background-color: pink;
-    text-align: center;
-    color: beige;
-    padding-top: 40px;
+  width: 100%;
+  height: 10vh;
+  background-color: pink;
+  text-align: center;
+  color: beige;
+  padding-top: 40px;
 }
 
 main {
-    width: 100%;
-    height: 100vh;
-    padding-top: 50px;
-    background-color: lavender;
+  width: 100%;
+  height: 100vh;
+  padding-top: 50px;
+  background-color: lavender;
 }
 .container {
-    display: flex;
-    justify-content: space-around;
+  display: flex;
+  justify-content: space-around;
 }
 .container-1 {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 li {
-    border: 1px solid lightgray;
-    border-radius: 0.4rem;
-    line-height: 20px;
-    margin-bottom: 5px;
-    margin-top: 5px;
-    padding: 5px;
-    
+  border: 1px solid lightgray;
+  border-radius: 0.4rem;
+  line-height: 20px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  padding: 5px;
 }
 
-.containerA, .containerB {
-    border: 1px solid;
-    border-radius: 1rem;
-    padding: 30px;
-    background-color: white;
-    box-shadow: 5px 10px 50px beige;
+.containerA,
+.containerB {
+  border: 1px solid;
+  border-radius: 1rem;
+  padding: 30px;
+  background-color: white;
+  box-shadow: 5px 10px 50px beige;
 }
 #new-task {
-    padding: 10px;
-    font-size: 17px;
-    border-radius: 0.3rem;
-    border: 1px solid lightgray;
-    margin-bottom: 10px;
-
+  padding: 10px;
+  font-size: 17px;
+  border-radius: 0.3rem;
+  border: 1px solid lightgray;
+  margin-bottom: 10px;
 }
-.buttonA, .buttonB{
-    padding: 10px;
-    font-size: 15px;
-    background-color: palegreen;
-    border-radius: 0.3rem;
-    border: 1px solid palegreen;
-    color: green;
+.buttonA,
+.buttonB {
+  padding: 10px;
+  font-size: 15px;
+  background-color: palegreen;
+  border-radius: 0.3rem;
+  border: 1px solid palegreen;
+  color: green;
 }
-.buttonA:hover, .buttonB:hover{
-    background-color: palevioletred;
-    color: gold;
-    border: gold;
+.buttonA:hover,
+.buttonB:hover {
+  background-color: palevioletred;
+  color: gold;
+  border: gold;
 }
 #search-task {
-    padding: 10px;
-    font-size: 17px;
-    border-radius: 0.3rem;
-    border: 1px solid lightgray;
+  padding: 10px;
+  font-size: 17px;
+  border-radius: 0.3rem;
+  border: 1px solid lightgray;
+}
+.checked {
+  text-decoration: line-through;
 }
