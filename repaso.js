@@ -23,7 +23,7 @@ const tasks = [
   },
 ];
 
-const renderTAsks = (tasks) => {
+const renderTasks = (tasks) => {
     taskList.innerHTML = '';
   for(const task of tasks){
 
@@ -41,7 +41,7 @@ const renderTAsks = (tasks) => {
   } 
 }
 
-renderTAsks(tasks);
+renderTasks(tasks);
 
 const handleClickCheckbox = (event) => {
     //recogemos el valor del id del input
@@ -57,7 +57,7 @@ const handleClickCheckbox = (event) => {
         tasks[taskIndex].completed = event.target.checked;
         console.log(tasks);
 
-    renderTAsks(tasks);
+    renderTasks(tasks);
 }
 
 taskList.addEventListener('click', handleClickCheckbox);
