@@ -17,7 +17,8 @@ const tasks = [
         - modificar su estado (propiedad completed) en tasks
 */
 
-const renderTasks = () => {
+const renderTasks = (tasks) => {
+    taskList.innerHTML = '';
     for(let task of tasks){
         if(task.completed){
             taskList.innerHTML += `<li class="checked"><input id="${task.name}"type="checkbox" checked> ${task.name}</li>`
@@ -28,7 +29,7 @@ const renderTasks = () => {
         }
     }
 }
-renderTasks();
+renderTasks(tasks);
 
 const handleCheck = (event) => {
     const inputId = event.target.id;
@@ -39,6 +40,7 @@ const handleCheck = (event) => {
 console.log(taskIndex);
     tasks[taskIndex].completed = event.target.checked;
     console.log(tasks);
+    renderTasks(tasks);
+
 }
-renderTasks(task);
 taskList.addEventListener('click', handleCheck);
