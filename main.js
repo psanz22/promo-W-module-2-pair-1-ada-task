@@ -1,27 +1,34 @@
 'use strict';
 
-const tasks = [
-  { name: 'Recoger setas en el campo', completed: true },
-  { name: 'Comprar pilas', completed: true },
-  { name: 'Poner una lavadora de blancos', completed: true },
-  {
-    name: 'Aprender cómo se realizan las peticiones al servidor en JavaScript',
-    completed: false,
-  },
-];
+const GITHUB_USER = '<lejladzanko>';
+const SERVER_URL = `https://dev.adalab.es/api/todo/${GITHUB_USER}`;
+
+const tasks = [];
 
 const list = document.querySelector('.js-list');
 
 function paintList(tasks) {
+  console.log(tasks)
   for (const task of tasks) {
-    console.log(task);
-
+  
     list.innerHTML += `<li><input id=${task.name} type='checkbox'checked/>  ${task.name}</li>`;
   }
 }
-paintList(tasks);
 
-const taskChecked= tasks.map((task)=>if(task.completed===true))
+fetch('https://dev.adalab.es/api/todo')
+.then((response) => response.json())
+.then((data) => {
+  console.log(data);
+  const tasksUrl = data.results;
+  paintList(tasksUrl);
+
+})
+
+
+
+// paintList(tasks);
+
+// const taskChecked= tasks.map((task)=>if(task.completed===true))
 
 // function handleChecked() {
 //   // console.log('click');
