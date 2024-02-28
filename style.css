@@ -73,6 +73,6 @@ li {
   border-radius: 0.3rem;
   border: 1px solid lightgray;
 }
-.checked {
+.crossOut {
   text-decoration: line-through;
 }
