@@ -24,40 +24,53 @@ const tasks = [
 ];
 
 const renderTasks = (tasks) => {
-    taskList.innerHTML = '';
-  for(const task of tasks){
+  taskList.innerHTML = '';
 
-    if(task.completed){
-        taskList.innerHTML += `<li class='crossOut'><input type="checkbox" checked id="${task.name}"><span>${task.name}</span></li>`
-    } else {
-        taskList.innerHTML += `<li ><input type="checkbox"  id="${task.name}"><span>${task.name}</span></li>`
+  for (const task of tasks) {
+    const newLi = document.createElement('li');
+    taskList.appendChild(newLi);
+    const checkbox = document.createElement('input');
+    checkbox.type = 'checkbox';
+    checkbox.id = task.name;
+    checkbox.checked = task.completed;
+    newLi.appendChild(checkbox);
+    const newContent = document.createTextNode(task.name);
+    newLi.appendChild(newContent);
+
+    // if (task.completed) {
+    //   taskList.innerHTML += `<li class='crossOut'><input type="checkbox" checked id="${task.name}"><span>${task.name}</span></li>`;
+    // } else {
+    //   taskList.innerHTML += `<li ><input type="checkbox"  id="${task.name}"><span>${task.name}</span></li>`;
+    // }
+
+    if (task.completed) {
+      newLi.classList.add('crossOut');
     }
-
 
     // const checked = task.complete ? 'checked' : '';
     // const classLi = task.complete ? 'crossOut' : '';
-    // taskList.innerHTML += `<li class=${classLi}><input type="checkbox" ${checked} ><span>${task.name}</span></li>`
-   
-  } 
-}
+    // taskList.innerHTML += `<li class=${classLi}><input type="checkbox" ${checked} ><span>${task.name}</span></li>`;
+    // }
+  }
+};
 
 renderTasks(tasks);
 
 const handleClickCheckbox = (event) => {
-    //recogemos el valor del id del input
-        const inputId = event.target.id;
-        console.log(inputId);
-        //Buscamos la tarea a través del id del input, que es su nombre
-        const taskIndex = tasks.findIndex((task)=>{
-            return task.name === inputId;
-        })
-        console.log(taskIndex);
-                //Actualizamos el array
+  //recogemos el valor del id del input
+  const inputId = event.target.id;
+  console.log(inputId);
+  //Buscamos la tarea a través del id del input, que es su nombre
+  const taskIndex = tasks.findIndex((task) => {
+    return task.name === inputId;
+  });
+  console.log(taskIndex);
+  //Actualizamos el array
 
-        tasks[taskIndex].completed = event.target.checked;
-        console.log(tasks);
+  tasks[taskIndex].completed = event.target.checked;
+  console.log(tasks);
 
-    renderTasks(tasks);
-}
+  renderTasks(tasks);
+};
 
 taskList.addEventListener('click', handleClickCheckbox);
